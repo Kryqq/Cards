@@ -1,0 +1,22 @@
+{
+   "compilerOptions": {
+      "baseUrl": ".",
+      "module": "esNext",
+      "target": "esnext",
+      "moduleResolution": "node",
+      "lib": ["ES2020", "DOM", "DOM.Iterable", "esnext"],
+      "paths": {
+         "@/*": ["./src/*"]
+      },
+      "jsx": "react-jsx",
+      "allowSyntheticDefaultImports": true
+   },
+
+   "include": ["src"],
+
+   "references": [
+      {
+         "path": "./tsconfig.node.json"
+      }
+   ]
+}
