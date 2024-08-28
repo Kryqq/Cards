@@ -1,0 +1,89 @@
+.input__box {
+   display: flex;
+   flex-direction: column;
+   height: 60px;
+}
+.input__label {
+   font-size: 14px;
+   font-weight: 400;
+   line-height: 24px;
+   color: var(--color-dark-100);
+}
+
+.input {
+   max-width: 284px;
+   height: 36px;
+   width: 100%;
+   color: var(--color-dark-100);
+   background-color: var(--color-dark-900);
+   border-right: 1px solid var(--color-dark-100);
+   border-left: 1px solid var(--color-dark-100);
+   border-bottom: 1px solid var(--color-dark-100);
+   border-top: none;
+   border-radius: 2px;
+   outline: none;
+
+   font-family: Roboto;
+   font-size: 16px;
+   font-weight: 400;
+   line-height: 24px;
+   letter-spacing: 0%;
+   &:active {
+      border-right: 1px solid var(--color-light-100);
+      border-left: 1px solid var(--color-light-100);
+      border-bottom: 1px solid var(--color-light-100);
+   }
+   &:hover {
+      border-right: 1px solid var(--color-light-700);
+      border-left: 1px solid var(--color-light-700);
+      border-bottom: 1px solid var(--color-light-700);
+
+      background: var(--color-dark-700);
+   }
+   &:focus {
+      border-right: 1px solid var(--color-info-900);
+      border-left: 1px solid var(--color-info-900);
+      border-bottom: 1px solid var(--color-info-900);
+   }
+   &:focus::placeholder {
+      color: var(--color-light-100);
+   }
+   &:disabled {
+      border-right: 1px solid var(--color-info-900);
+      border-left: 1px solid var(--color-info-900);
+      border-bottom: 1px solid var(--color-info-900);
+   }
+}
+
+.default {
+}
+.password {
+}
+
+.search {
+}
+.error__input {
+   border-right: 1px solid var(--color-danger-300);
+   border-left: 1px solid var(--color-danger-300);
+   border-bottom: 1px solid var(--color-danger-300);
+   &::placeholder {
+      color: var(--color-danger-300);
+   }
+}
+
+.error {
+   color: var(--color-danger-300);
+   height: auto;
+   font-size: 12px;
+   font-weight: 400;
+   line-height: 24px;
+   letter-spacing: 0px;
+   padding: 0;
+}
+
+.disabled {
+   color: var(--color-dark-300);
+   &::placeholder {
+      color: var(--color-dark-300);
+   }
+}
