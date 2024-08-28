@@ -1,28 +1,56 @@
- 
-@use '../../../styles/colors' as *;
+@use '@/styles/colors' as *;
 
 .button {
-	all: unset;
-	cursor: pointer;
-	box-sizing: border-box;
-	color: inherit;
-	font-family: inherit;
-    
-	&:focus-visible {
-	  outline: 2px solid var(--color-info-500);
-	}
+   all: unset;
+   cursor: pointer;
+   width: 150px;
+   height: 36px;
+   padding: 6px 28px 6px 28px;
+   box-sizing: border-box;
+   color: inherit;
+   font-family: inherit;
+   font-family: 'Roboto', sans-serif;
+   font-size: 14px;
+   font-weight: 700;
+   border-radius: 4px;
+   &:focus-visible {
+      outline: 2px solid var(--color-info-500);
    }
-    
-   .primary {
-	background-color: var(--color-accent-500);
+}
+.primary {
+   background-color: var(--color-accent-500);
+   box-shadow: 0px 4px 18px 0px var(--color-accent-500);
+   &:active {
+      background-color: var(--color-accent-700);
    }
-    
-   .secondary {
-	background-color: var(--color-dark-300);
+   &:hover {
+      background-color: var(--color-accent-100);
    }
-    
-   .fullWidth {
-	width: 100%;
+   &:focus {
+      background-color: var(--color-accent-300);
    }
+   &:disabled {
+      background-color: var(--color-accent-700);
+   }
+}
 
-   
+.secondary {
+   background-color: var(--color-dark-300);
+   box-shadow: 0px 4px 18px 0px var(--color-dark-300);
+   &:active {
+      background-color: var(--color-dark-700);
+   }
+   &:hover {
+      background-color: var(--color-dark-100);
+   }
+   &:focus {
+      background-color: var(--color-dark-300);
+   }
+   &:disabled {
+      background-color: var(--color-dark-700);
+   }
+}
+
+.fullWidth {
+   width: 100%;
+}
