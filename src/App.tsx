@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Input } from './components/ui/input';
 import './styles/_boilerplate.scss';
-import { Tab } from './components/ui/tabs/Tabs';
+import { Tab } from './components/ui/tabs';
 
 export function App() {
    return (
