@@ -1,0 +1,102 @@
+.checkbox_custom {
+   position: absolute;
+   z-index: -1;
+   opacity: 0;
+}
+
+.checkbox_custom + label {
+   display: inline-flex;
+   align-items: center;
+   user-select: none;
+   position: relative;
+}
+
+.checkbox_custom + label::before {
+   content: '';
+   cursor: pointer;
+   display: inline-block;
+   width: 18px;
+   height: 18px;
+   flex-shrink: 0;
+   flex-grow: 0;
+   border: 2px solid var(--color-light-100);
+   border-radius: 0.25em;
+   margin-right: 0.5em;
+   background-repeat: no-repeat;
+   background-position: center center;
+   background-size: 75% 75%;
+   position: relative;
+   z-index: 1; /* Чтобы быть поверх анимации круга */
+   transition:
+      background-color 0.2s,
+      border-color 0.2s;
+}
+
+/* Анимация круга */
+.checkbox_custom + label::after {
+   content: '';
+   position: absolute;
+   left: -9px; /* Чтобы круг был по центру относительно чекбокса */
+   top: -9px; /* То же самое для вертикали */
+   width: 36px;
+   height: 36px;
+   border-radius: 50%;
+   background-color: var(--color-dark-100); /* Полупрозрачный синий цвет */
+   transition:
+      transform 0.4s ease-out,
+      opacity 0.4s ease-out;
+   transform: scale(0); /* Изначально круг сжат */
+   z-index: 0; /* Под чекбоксом */
+}
+
+/* Состояние checked */
+.checkbox_custom:checked + label::before {
+   border-color: var(--color-light-100);
+   background-color: var(--color-light-100);
+   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill= 'black' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+}
+
+/* Hover эффект с анимацией круга */
+.checkbox_custom:not(:disabled) + label:hover::after {
+   transform: scale(1); /* Круг развернётся до 36px */
+   opacity: 0.1; /* Небольшая прозрачность */
+}
+
+.checkbox_custom:not(:disabled) + label:hover::before {
+   border-color: var(--color-dark-100);
+   background-color: var(--color-dark-100);
+}
+
+/* Active эффект с анимацией круга */
+.checkbox_custom:not(:disabled):active + label::after {
+   transform: scale(1); /* Круг становится больше при клике */
+   opacity: 0.2; /* Более прозрачный при нажатии */
+}
+
+.checkbox_custom:not(:disabled):active + label::before {
+   background-color: var(--color-light-100);
+   border-color: var(--color-light-100);
+}
+
+/* Focus эффект с анимацией круга */
+.checkbox_custom:focus + label::after {
+   transform: scale(1);
+   opacity: 0.3;
+}
+
+.checkbox_custom:focus + label::before {
+   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.checkbox_custom:focus:not(:checked) + label::before {
+   border-color: #80bdff;
+}
+
+/* Состояние disabled */
+.checkbox_custom:disabled + label::before {
+   background-color: var(--color-light-100);
+}
+
+.checkbox_custom:disabled + label::after {
+   opacity: 0;
+}
