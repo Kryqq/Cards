@@ -2,7 +2,9 @@ import { Button } from '@/components/ui/button';
 import { Input } from './components/ui/input';
 import './styles/_boilerplate.scss';
 import { Tab } from './components/ui/tabs';
-import { LoginForm } from './components/auth/loginForm/loginForm';
+import { LoginForm } from './components/auth/loginForm/';
+import { Checkbox } from './components/ui/checkbox';
+import React from 'react';
 
 export function App() {
    return (
