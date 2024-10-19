@@ -5,10 +5,11 @@ export type Props<T extends React.ElementType = 'input'> = {
    className?: string;
    label?: string;
    error?: boolean;
+   errorMessage?: string;
 } & React.ComponentPropsWithoutRef<T>;
 
 export const Input = forwardRef<HTMLInputElement, Props>((props, ref) => {
-   const { variant = 'default', label, error, className, ...rest } = props;
+   const { variant = 'default', label, error, className, errorMessage, ...rest } = props;
 
    return (
       <div className={s.input__box}>
@@ -18,7 +19,7 @@ export const Input = forwardRef<HTMLInputElement, Props>((props, ref) => {
             className={` ${s.input} ${s[variant]} ${className} ${error ? s.error__input : ''} `}
             {...rest}
          />
-         {error ? <div className={s.error}>Error</div> : null}
+         {error ? <div className={s.error}>{errorMessage}</div> : null}
       </div>
    );
 });
