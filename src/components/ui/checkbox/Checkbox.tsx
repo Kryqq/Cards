@@ -1,21 +1,21 @@
 import React from 'react';
 import s from './checkbox.module.scss';
 
-type Props<T extends React.ElementType = 'input'> = {
+export type СheckboxProps<T extends React.ElementType = 'input'> = {
    label?: string;
    error?: boolean;
    checked?: boolean;
-   onCheckedChange: (checked: boolean) => void;
+   //    onCheckedChange: (checked: boolean) => void;
 } & React.ComponentPropsWithRef<T>;
 
-export const Checkbox = (props: Props) => {
-   const { label, checked, error, onCheckedChange, ...rest } = props;
+export const Checkbox = (props: СheckboxProps) => {
+   const { label, checked, error, ...rest } = props;
 
    const id = React.useId();
 
-   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-      onCheckedChange(e.target.checked);
-   };
+   //    const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+   // 	   onCheckedChange(e.target.checked);
+   // 	};
 
    return (
       <>
@@ -23,7 +23,7 @@ export const Checkbox = (props: Props) => {
             className={`${s.checkbox_custom} ${checked ? s.checkbox__checked : ''} ${error ? s.error__input : ''}`}
             checked={checked}
             {...rest}
-            onChange={onChange}
+            //   onChange={onChange}
             type="checkbox"
             name="checkbox"
             id={id}
