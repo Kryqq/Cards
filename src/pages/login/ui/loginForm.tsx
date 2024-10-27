@@ -1,18 +1,13 @@
 import { useForm } from 'react-hook-form';
 import { DevTool } from '@hookform/devtools';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import z from 'zod';
+
 import { zodResolver } from '@hookform/resolvers/zod';
-import { ControlledCheckbox } from '@/components/ui/controlled-checkbox';
+import { Input } from '@/shared/ui/input';
+import { ControlledCheckbox } from '@/shared/ui/controlled-checkbox';
+import { Button } from '@/shared/ui/button';
+import { FormValues, loginSchema } from '../model/validationSchema';
 
 export const LoginForm = () => {
-   const loginSchema = z.object({
-      email: z.string().email(),
-      password: z.string().min(3),
-      rememberMe: z.boolean().default(false),
-   });
-   type FormValues = z.infer<typeof loginSchema>;
    const {
       control,
       handleSubmit,
